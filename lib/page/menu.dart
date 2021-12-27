@@ -1,0 +1,168 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Cuisine App"),
+      ),
+      body: Container(
+        child: Center(
+          child: ListView(
+            children: [
+              pic_cover(),
+              infor(),
+              profile(),
+              name_chef(),
+              time_finish(),
+              line(),
+              describe()
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Image pic_cover() => Image.asset('images/lobster_cover.jpg');
+
+  Widget infor() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 25),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'วิธีทำ “ล็อบสเตอร์อบชีส” เมนูอาหารฝรั่งทำง่ายแบบไม่ง้อร้าน! ',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "เนื้อล็อบสเตอร์เด้ง ๆ โปะซอสเข้มข้นและชีสเน้น ๆ กับเมนู “ล็อบสเตอร์อบชีส” ที่มาพร้อมวิธีทำที่ทำตามได้ไม่ยาก พร้อมแล้วตามมาเข้าครัวกันเลย! ",
+            style: TextStyle(fontSize: 16, height: 1.4, color: Colors.grey),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget profile() {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: CircleAvatar(
+        radius: 53,
+        backgroundColor: Colors.black38,
+        child: CircleAvatar(
+          radius: 50,
+          backgroundImage: NetworkImage(
+              'https://scontent.fbkk5-6.fna.fbcdn.net/v/t1.6435-1/p240x240/133806163_105391181505653_4454539258905947315_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=7206a8&_nc_ohc=ooI9I8bE094AX9LdH0M&_nc_ht=scontent.fbkk5-6.fna&oh=00_AT-eO8UsN7KF9bCSamvjoK9voXDixWfwENQbNgssC-vqaw&oe=61ED8BDF'),
+        ),
+      ),
+    );
+  }
+
+  Widget name_chef() {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            '17 ธ.ค. 2564 โดย เซฟตั้มคนดี',
+            style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget time_finish() => Container(
+        padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(255, 215, 0, 20),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              children: [
+                Icon(Icons.timer, color: Colors.blue[500]),
+                const Text('เตรียมเวลา'),
+                const Text('10 นาที'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(Icons.restaurant, color: Colors.orange[500]),
+                const Text('เวลาปรุง'),
+                const Text('50 นาที'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(Icons.local_fire_department, color: Colors.red[500]),
+                const Text('แคลอรี่'),
+                const Text('300 Kcal/เสิร์ฟ'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(Icons.person, color: Colors.green[500]),
+                const Text('สำหรับ'),
+                const Text('5 เสิร์ฟ'),
+              ],
+            ),
+          ],
+        ),
+      );
+
+  Widget line() => Container(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+                child: Container(
+              padding:
+                  EdgeInsets.only(left: 25, right: 25, top: 15, bottom: 10),
+              child: Divider(color: Colors.grey, thickness: 1),
+            )),
+            Text(
+              'เกรินเล็กน้อย',
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+              ),
+            ),
+            Expanded(
+                child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Divider(color: Colors.grey, thickness: 1),
+            )),
+          ],
+        ),
+      );
+
+  Widget describe() {
+    return Container(
+      padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "ใครว่าทำเมนูล็อบสเตอร์นั้นไม่สามารถทำได้ที่บ้าน จิ๋วหิวโซคนนี้ขอคาน! เพราะวันนี้จะมาชวนเพื่อน ๆ เข้าครัวทำเมนู “ล็อบสเตอร์อบชีส” ที่บ้านกันแบบง่าย ๆ และไม่ต้องเตรียมล็อบสเตอร์ให้วุ่นวาย ส่วนซอสก็สามารถทำได้ไม่ยาก งานนี้รับรองว่าเด็ดไม่แพ้ร้านเลยล่ะจ้า  ",
+            style: TextStyle(
+              fontSize: 16,
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
