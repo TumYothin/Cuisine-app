@@ -15,7 +15,10 @@ class MyHomePage extends StatelessWidget {
         child: Center(
           child: ListView(
             children: [
-              pic_cover(),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 7),
+                child: pic_cover(),
+              ),
               infor(),
               profile(),
               name_chef(),
