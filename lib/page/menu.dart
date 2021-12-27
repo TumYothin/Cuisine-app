@@ -19,7 +19,10 @@ class MyHomePage extends StatelessWidget {
               infor(),
               profile(),
               name_chef(),
-              time_finish(),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: time_finish(),
+              ),
               line(),
               describe()
             ],
@@ -80,15 +83,15 @@ class MyHomePage extends StatelessWidget {
   }
 
   Widget time_finish() => Container(
-        padding: EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
         decoration: BoxDecoration(
           color: Color.fromRGBO(255, 215, 0, 20),
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
         ),
+        padding: EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
               children: [
