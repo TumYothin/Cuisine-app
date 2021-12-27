@@ -55,7 +55,8 @@ class MyHomePage extends StatelessWidget {
           ),
           Text(
             "เนื้อล็อบสเตอร์เด้ง ๆ โปะซอสเข้มข้นและชีสเน้น ๆ กับเมนู “ล็อบสเตอร์อบชีส” ที่มาพร้อมวิธีทำที่ทำตามได้ไม่ยาก พร้อมแล้วตามมาเข้าครัวกันเลย! ",
-            style: TextStyle(fontSize: 16, height: 1.4, color: Colors.grey),
+            style: TextStyle(
+                fontSize: 16, height: 1.4, color: Colors.grey.shade600),
           ),
         ],
       ),
